@@ -9,7 +9,40 @@ height: 500px;
 flex-direction: column; 
  border: 3px solid black;
  border-radius: 8px`);
-const gridSize = 20;
+
+var gridSize = 20;
+function getdata() {
+  const pxData = document.getElementById('textbox-data').value;
+  const newPxData = pxData.slice(0,2);
+  if(pxData == []){
+    alert('Nothing Inserted');
+  }
+  else {
+    //alert(newPxData);
+    gridSize = Number(newPxData);
+  document.getElementById('textbox-data').value = null;
+  return gridSize;
+}
+}
+
+function getDataKeyboard(event){
+  const keyData = document.getElementById('textbox-data').value;
+  const newKeyData = keyData.slice(0,2);
+  if(event.keyCode === 13){
+    if(keyData == []){
+    alert('Nothing Inserted');
+  }
+  else {
+    //alert(newKeyData);
+    gridSize = Number(newKeyData);
+    alert(gridSize);
+    document.getElementById('textbox-data').value = null;
+    return gridSize;
+  }
+  }
+
+}
+
 
 for (let i = 0; i < gridSize; i++) {
     const row = document.createElement('div');
@@ -83,16 +116,21 @@ const eraseBtn = document.createElement('button');
  const pxText = document.createElement('input');
  pxText.setAttribute('type', 'textbox');
  pxText.setAttribute('class', ' rsBtn');
- pxText.setAttribute('placeholder', '16 SQ Grid')
+ pxText.addEventListener('keypress',getDataKeyboard);
+ pxText.setAttribute('id', 'textbox-data');
+ pxText.setAttribute('placeholder', ' 16 SQ ');
  pxText.setAttribute('style', `
  background-color: white;
   margin-top: 1px; 
-  margin-bottom: 0px`)
+  margin-bottom: 0px;
+  color: black;
+  font-size: .7rem;`)
  pxTextbox.appendChild(pxText);
 
  const pxSubmit = document.createElement('button');
  pxSubmit.textContent = 'Submit';
  pxSubmit.setAttribute('class', 'rsBtn');
  pxSubmit.setAttribute('style', 'margin-top: 5px;');
+ pxSubmit.addEventListener('click', getdata);
  pxTextbox.appendChild(pxSubmit);
 
