@@ -66,4 +66,33 @@ const eraseBtn = document.createElement('button');
         div.style.backgroundColor= 'white';
     })
   }
- 
+ const increasePxDiv = document.createElement('div');
+ increasePxDiv.setAttribute('class', 'divNmbr');
+ buttons.appendChild(increasePxDiv);
+  
+ const pxTextbox = document.querySelector('.divNmbr');
+ const pxInstr= document.createElement('p');
+ pxInstr.textContent = 'Enter Grid number:';
+ pxInstr.setAttribute('style', 
+ `margin-top: 20px;
+ margin-bottom: 0;
+ color: darkred;
+ font-size: .8rem;`);
+ pxTextbox.appendChild(pxInstr)
+
+ const pxText = document.createElement('input');
+ pxText.setAttribute('type', 'textbox');
+ pxText.setAttribute('class', ' rsBtn');
+ pxText.setAttribute('placeholder', '16 SQ Grid')
+ pxText.setAttribute('style', `
+ background-color: white;
+  margin-top: 1px; 
+  margin-bottom: 0px`)
+ pxTextbox.appendChild(pxText);
+
+ const pxSubmit = document.createElement('button');
+ pxSubmit.textContent = 'Submit';
+ pxSubmit.setAttribute('class', 'rsBtn');
+ pxSubmit.setAttribute('style', 'margin-top: 5px;');
+ pxTextbox.appendChild(pxSubmit);
+
