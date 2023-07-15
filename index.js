@@ -28,25 +28,29 @@ for (let i = 0; i < gridSize; i++) {
       row.appendChild(column);
     }
   }
+  let clickFlag;
 function draw(){
-    this.style.backgroundColor = 'darkblue'; 
+    this.style.backgroundColor = '#606C5D'; 
+    
 }
  
 const buttons = document.querySelector('.buttons');
 const eraseBtn = document.createElement('button');
- eraseBtn.setAttribute('onclick', 'clearDiv()');
+ eraseBtn.addEventListener('click', clearDiv);
  eraseBtn.textContent = "Erase" ;
  buttons.appendChild(eraseBtn);
  eraseBtn.setAttribute('class', 'rsBtn');
  
- let clickFlag = false;
+
  function clearDiv() {
     
     let clearedDiv = document.querySelector('.column');
+  
     clearedDiv.addEventListener('click', function(cleared){
-        clickFlag = !clickFlag;
+    
     cleared.style.backgroundColor = 'white';
     });
+    
  }
 
 
