@@ -7,7 +7,8 @@ box-sizing: border-box;
 width: 500px;
 height: 500px;
 flex-direction: column; 
- border: .2px solid black;`);
+ border: 3px solid black;
+ border-radius: 8px`);
 const gridSize = 20;
 
 for (let i = 0; i < gridSize; i++) {
