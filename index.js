@@ -21,12 +21,34 @@ for (let i = 0; i < gridSize; i++) {
       const column = document.createElement('div');
       column.classList.add('column');
     //   column.classList.add('drawPad');
-      column.setAttribute('onclick', 'this.style.backgroundColor= "darkblue"' );//
-      column.setAttribute('style', 'flex: 1; ');//border: 1px solid red;
+    column.addEventListener('mouseover', draw);
+    //   column.setAttribute('onmouseover', 'this.style.backgroundColor= "darkblue"' ); 
+      column.setAttribute('style', 'flex: 1; ');
       row.appendChild(column);
     }
   }
-  const buttons = document.querySelector('.buttons');
+function draw(){
+    this.style.backgroundColor = 'darkblue'; 
+}
+ 
+const buttons = document.querySelector('.buttons');
+const eraseBtn = document.createElement('button');
+ eraseBtn.setAttribute('onclick', 'clearDiv()');
+ eraseBtn.textContent = "Erase" ;
+ buttons.appendChild(eraseBtn);
+ eraseBtn.setAttribute('class', 'rsBtn');
+ 
+ let clickFlag = false;
+ function clearDiv() {
+    
+    let clearedDiv = document.querySelector('.column');
+    clearedDiv.addEventListener('click', function(cleared){
+        clickFlag = !clickFlag;
+    cleared.style.backgroundColor = 'white';
+    });
+ }
+
+
   const resetButton = document.createElement('button');
   resetButton.setAttribute('class', 'rsBtn');
   resetButton.textContent = 'Reset';
@@ -39,4 +61,4 @@ for (let i = 0; i < gridSize; i++) {
         div.style.backgroundColor= 'white';
     })
   }
-  
+ 
