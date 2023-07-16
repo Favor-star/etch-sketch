@@ -129,11 +129,10 @@ resetBtn.textContent = "Reset";
 buttonsDiv.appendChild(resetBtn);
 
 let newColor;
-
+//function to retrieve a color from selected choice;
 function applyColor(choice) {
   newColor = choice;
 }
-
 // function to apply certain colors
 function drawColor() {
     this.style.backgroundColor = newColor;
