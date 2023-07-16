@@ -5,8 +5,14 @@ let buttonsDiv = document.querySelector('.buttons2');
 let resizeBox = document.createElement('input');
 resizeBox.setAttribute('id', 'inputBox');
 resizeBox.setAttribute('placeholder', '16-100 SQ');
+resizeBox.addEventListener('keydown', function(event){
+    if(event.key === 'Enter'){
+        getData();
+        submitData();
+        }
+});
 resizeBox.setAttribute('title', 'input');
-resizeBox.setAttribute('type', 'textbox');
+resizeBox.setAttribute('type', 'text');
 buttonsDiv.appendChild(resizeBox);
 
 //Submit button creation
@@ -43,10 +49,12 @@ function container(size) {
 }
 
 container(16);
+
 //function to get user's desired div numbers
 function getData() {
     const userInput = document.getElementById('inputBox').value;
     return userInput;
+
 }
 //function to change div number after taking user's desired divs
 function submitData() {
@@ -54,8 +62,9 @@ function submitData() {
     if (resized >= 16 && resized <= 100) {
         container(resized);
     } else {
-        alert(resized);
+        alert(`You must enter number whithin the range: 16-100`);
     }
+    document.getElementById('inputBox').value = null;
 }
 
 //button for applying black colors

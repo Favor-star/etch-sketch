@@ -8,6 +8,8 @@
 .columns {
     /* border: 1px solid blue; */
     flex: 1;
+    border-bottom: .5px solid rgba(0, 0, 139, 0.37);
+    border-right: .5px solid rgba(0, 0, 139, 0.281);
 }
 .rows {
     flex: 1;
@@ -38,7 +40,7 @@
     box-shadow: 4px 4px 5px ;
 }
 #submitBtn {
-    width: 80px;
+    width: 90px;
     margin-top: 0;
     background-color:rgb(139, 18, 18);
     color: #ffff;
