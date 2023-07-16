@@ -42,7 +42,7 @@ function container(size) {
     }
 }
 
-container(17);
+container(16);
 //function to get user's desired div numbers
 function getData() {
     const userInput = document.getElementById('inputBox').value;
@@ -53,7 +53,6 @@ function submitData() {
     let resized = getData();
     if (resized >= 16 && resized <= 100) {
         container(resized);
-        alert(resized);
     } else {
         alert(resized);
     }
@@ -95,6 +94,39 @@ randomButton.addEventListener('click', function(){
 randomButton.textContent = 'Random';
 buttonsDiv.appendChild(randomButton);
 
+//color picker 
+let colorPicker = document.createElement('input');
+colorPicker.setAttribute('type', 'color');
+colorPicker.setAttribute('class', 'color picker');
+colorPicker.setAttribute('id', 'colorPickker');
+colorPicker.setAttribute('value', '#008000');
+colorPicker.addEventListener('input', function(){
+    const selected = this.value;
+    applyColor(selected);
+})
+buttonsDiv.appendChild(colorPicker)
+
+//clear button 
+let clearButton = document.createElement('button');
+clearButton.setAttribute('class', 'color clear ');
+clearButton.setAttribute('type', 'button');
+clearButton.addEventListener('click', function(){
+    applyColor('white')
+});
+clearButton.textContent = "Clear";
+buttonsDiv.appendChild(clearButton);
+
+//reset button 
+let resetBtn = document.createElement('button');
+let clearDiv = document.querySelectorAll('.columns');
+resetBtn.addEventListener('click', function(){
+    clearDiv.forEach( function (column){
+        column.style.backgroundColor = 'white';
+    })
+});
+resetBtn.setAttribute('class', 'color reset');
+resetBtn.textContent = "Reset";
+buttonsDiv.appendChild(resetBtn);
 
 let newColor;
 

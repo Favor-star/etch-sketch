@@ -9,9 +9,10 @@ body {
 }
 h1 {
     text-align: center;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid black;
+    font-weight: 900;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 4px black;
     color:#F86F03;
 }
 

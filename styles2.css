@@ -15,3 +15,73 @@
     display: flex;
     flex-direction: column;
 }
+.buttons2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.color {
+    width: 70px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.616);
+
+}
+.color:hover {
+    width: 72px;
+    border: 2px solid rgba(255, 60, 0, 0.473);
+    border-radius: 4px;
+
+}
+#inputBox {
+    width: 90px;
+    border: 2px solid rgb(139, 18, 18);
+    border-radius: 4px;
+    box-shadow: 4px 4px 5px ;
+}
+#submitBtn {
+    width: 80px;
+    margin-top: 0;
+    background-color:rgb(139, 18, 18);
+    color: #ffff;
+    border: 2px solid rgb(139, 18, 18);
+    border-radius: 4px;
+    box-shadow: 4px 4px 5px black;
+    margin-bottom: 20px;
+
+}
+.black {
+    background-color: black;
+    color: white;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+}
+.blue {
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 4px;
+}
+.red {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+.random {
+    background-image: linear-gradient(to right, rgba(211, 6, 6, 0.774), rgb(2, 71, 2), rgb(150, 150, 16));
+    color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+}   
+.picker {
+    border: 2px solid white;
+    padding: 0;
+    border-radius: 4px; 
+}
+.clear {
+    margin-top: 40px;
+    border: 2px dotted black;
+
+}
+.reset {
+    border: 2px dotted black;
+}
