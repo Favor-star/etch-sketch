@@ -82,7 +82,9 @@ function clearDiv() {
 const resetButton = document.createElement("button");
 resetButton.setAttribute("class", "rsBtn");
 resetButton.textContent = "Reset";
-resetButton.setAttribute("onclick", "resetDivColor()");
+// resetButton.setAttribute("onclick", "resetDivColor()");
+resetButton.addEventListener("click",resetDivColor)
+
 buttons.appendChild(resetButton);
 
 function resetDivColor() {
